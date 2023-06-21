@@ -8,6 +8,7 @@ body {
   color: #444;
   font-family: sans-serif;
   border-top: 10px solid #1098ad;
+  position: relative;
 }
 
 .container {
@@ -21,7 +22,7 @@ body {
   background-color: #f7f7f7;
   padding: 20px 40px;
   margin-bottom: 60px;
-  height: 80px;
+  /* height: 80px; */
 }
 
 aside {
@@ -54,6 +55,20 @@ h1 {
 h2 {
   font-size: 40px;
   margin-bottom: 30px;
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -15px;
+  right: -25px;
 }
 
 .post-header {
@@ -83,6 +98,7 @@ ol {
 li {
   font-size: 20px;
   margin-bottom: 10px;
+  /* display: inline; */
 }
 
 li:last-child {
@@ -177,3 +193,52 @@ nav a:link {
   width: 100%;
   height: auto;
 }
+
+nav a:link {
+  /* background-color: orangered;
+  margin: 20px;
+  padding: 20px;
+  display: block; */
+  display: inline;
+  margin-right: 30px;
+  margin-top: 10px; /* doesn't work as inline by default*/
+}
+
+/* Pseudo class of a pseudo class */
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  font-weight: bold;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+/* Pseudo elements */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+h2::first-letter {
+  font-size: 60px;
+}
+
+/* Adjacent sibling selector pseudo element */
+h3 + p {
+  /* color: red; 
+      selects every p just after h3 */
+}
+
+/* before and after pseudo elements */
